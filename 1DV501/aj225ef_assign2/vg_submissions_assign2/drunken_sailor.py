@@ -1,6 +1,6 @@
 import random
 
-# define a graph
+# define a graph (x, y)
 
 # set start coords and limit coords
 
