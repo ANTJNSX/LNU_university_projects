@@ -1,13 +1,13 @@
-
-# drumken saimlor :3
-
 import random
 
-# define a plane
+# define a graph
 
-# loop over choices
-# check if place is off grid
-    # add 1 to dead 
+# set start coords and limit coords
+
+# loop over choices of [up down left or right]
+# change current position according to direction
+# check if current x or y is beyond the limit coords
+    # if true add 1 to dead
     # continue loop to next sailor/index
 # else keep looping
 # if its taken enough steps, continue loop
@@ -21,7 +21,7 @@ dead_sailors=0
 x_min, x_max, y_min, y_max = -plank_size, plank_size, -plank_size, plank_size
 
 for i in range(sailors):
-    
+
     x, y = 0, 0
 
     for j in range(0, steps):
@@ -29,8 +29,8 @@ for i in range(sailors):
 
         match step_dir:
             case 'up':
-                y+=1 
-        
+                y+=1
+
             case 'down':
                 y-=1
 
@@ -39,11 +39,9 @@ for i in range(sailors):
 
             case 'right':
                 x+=1
-         
-        if x < x_min or x > x_max or y < y_min or y > y_max: 
+
+        if x < x_min or x > x_max or y < y_min or y > y_max:
             dead_sailors+=1
             break
-
-    # print(y,x)
 
 print(f"Out of {sailors} drunk sailors, {dead_sailors} ({round((dead_sailors/sailors)*100, 2)}%) fell into the water.")
